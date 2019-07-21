@@ -20,7 +20,9 @@ pub struct Program {
 
 impl Program {
     fn instruction(&self) -> Instruction {
-        let code = (self.memory[self.program_counter as usize] as u16) << 8 | (self.memory[self.program_counter as usize + 1] as u16);
+        let counter = self.program_counter as usize;
+        let code = &self.memory[counter..=counter+1];
+        let code = u16::from_be_bytes(<[u8; 2]>::try_from(code).unwrap());
 
         Instruction::from(code)
     }
