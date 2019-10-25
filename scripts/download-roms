@@ -4,11 +4,11 @@ readonly root="$(dirname "${BASH_SOURCE[0]}")/.."
 
 cd $root
 
-rm -rf .roms
-mkdir .roms
+rm -rf roms
+mkdir roms
 
-curl -Lo ./.roms/roms.zip https://www.zophar.net/download_file/11688
-unzip ./.roms/roms.zip -d ./.roms
-rm ./.roms/roms.zip
+curl -Lo ./roms/roms.zip https://www.zophar.net/download_file/11688
+unzip ./roms/roms.zip -d ./roms
+rm ./roms/roms.zip
 
 cd -

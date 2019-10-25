@@ -1,0 +1,18 @@
+[package]
+name = "chip8-wasm"
+version = "0.1.0"
+authors = ["LightDiscord <root@arnaud.sh>"]
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+chip8-core = { path = "../core" }
+serde = { version = "1.0.59", features = ["derive"] }
+serde_derive = "1.0.59"
+console_error_panic_hook = "0.1"
+
+[dependencies.wasm-bindgen]
+version = "0.2.52"
+features = ["serde-serialize"]
